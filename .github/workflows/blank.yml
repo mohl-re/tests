@@ -10,9 +10,9 @@ on:
       test_suite:
         description: Test suite
         type: choice
-        value: functional
         options:
           - regression
+          - functional
 
 jobs:
   runs-on: ubuntu-latest
