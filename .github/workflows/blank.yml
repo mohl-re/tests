@@ -4,11 +4,12 @@ name: CI
 
 # Controls when the workflow will run
 on:
+  push:
   workflow_dispatch:
     inputs:
       test_suite:
-      description: Test suite
-      type: choice
-      value: functional
-      options:
-        - regression
+        description: Test suite
+        type: choice
+        value: functional
+        options:
+          - regression
