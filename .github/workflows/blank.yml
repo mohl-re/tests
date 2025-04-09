@@ -13,3 +13,8 @@ on:
         value: functional
         options:
           - regression
+
+jobs:
+  runs-on: ubuntu-latest
+  my-job:
+    run: echo test
