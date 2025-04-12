@@ -17,3 +17,16 @@ jobs:
         run: echo 'print("hello world")' > hello.py
       - name: run python script
         run: python hello.py
+
+  next-job:
+    runs-on: ubuntu-latest
+    needs: python-job
+    if: succesful()
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v4
+      - name: create artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: artifact
+          path: ./hello.py
