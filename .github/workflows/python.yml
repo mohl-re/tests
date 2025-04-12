@@ -25,8 +25,10 @@ jobs:
     steps:
       - name: checkout code
         uses: actions/checkout@v4
+      - name: create dumb file
+        run: echo 'test' > test.txt
       - name: create artifact
         uses: actions/upload-artifact@v4
         with:
           name: artifact
-          path: ./README.md
+          path: ./test.txt
