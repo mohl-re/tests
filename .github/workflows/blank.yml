@@ -13,8 +13,10 @@ jobs:
     steps:
     - name: create test file
       run: echo 'test' > $ARTIFACT_NAME
+    - name: checkout-code
+      uses: actions/checkout@v2
     - name: upload artifact
-      uses: action/upload-artifact@v4
+      uses: action/upload-artifact@v2
       with:
         name: $ARTIFACT_NAME
   download-job2:
@@ -22,6 +24,6 @@ jobs:
     needs: upload-job-1
     steps:
       - name: download-artifact
-        uses: action/download-artifact@v4
+        uses: action/download-artifact@v2
         with:
-          name: $ARTIFACT_NAME 
+          name: $ARTIFACT_NAME
