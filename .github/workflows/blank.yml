@@ -31,6 +31,6 @@ jobs:
       - name: Checkout
         uses: action/checkout@v4
         with:
-          repository: tests
+          repository: mohl-re/tests
       - name: List files
         run: ls
