@@ -4,11 +4,11 @@ on:
   push:
     branches:
       - main
-env:
-  MYVAR: HELLO
-
+      
 jobs:
   linux-job:
+    env:
+      MYVAR: HELLO
     runs-on: ubuntu-latest
     steps: 
       - name: Linux date
