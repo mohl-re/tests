@@ -1,15 +1,29 @@
-name: My test Workflows
-
+name: 'Upload/Download Artifacts'
 on:
   push:
     branches:
-      - main
-      
+      main
+env:
+  ARTIFACT_NAME: 'test.txt'
+
+
 jobs:
-  linux-job:
-    env:
-      MYVAR: HELLO
+  upload-job-1:
     runs-on: ubuntu-latest
-    steps: 
-      - name: Linux date
-        run: echo $MY_VAR
+    steps:
+    - name: checkout-code
+      uses: actions/checkout@v2
+    - name: create test file
+      run: echo 'test' > $ARTIFACT_NAME
+    - name: upload artifact
+      uses: action/upload-artifact@v2
+      with:
+        name: $ARTIFACT_NAME
+  download-job2:
+    runs-on: ubuntu-latest
+    needs: upload-job-1
+    steps:
+      - name: download-artifact
+        uses: action/download-artifact@v2
+        with:
+          name: $ARTIFACT_NAME 
