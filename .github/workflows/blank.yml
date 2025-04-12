@@ -9,5 +9,26 @@ jobs:
   linux-job:
     runs-on: ubuntu-latest
     steps: 
-      - name: Linux
+      - name: Linux date
         run: date
+
+  windows-job:
+    runs-on: windows-latest
+    steps:
+      - name: Windows date
+        run: Get-Date
+
+  macos-job:
+    runs-on: macos-latest
+    steps:
+      - name: MacOs date
+        run: date
+
+  my-job:
+    needs: [linux-job,windows-job,macos-job]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: action/checkout@v4
+      - name: List files
+        run: ls
