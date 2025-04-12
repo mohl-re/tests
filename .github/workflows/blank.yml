@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: create test file
-      run: echo 'test' > $ARTIFACT_NAME
+      run: echo 'test' > ${{ env.ARTIFACT_NAME }}
     - name: checkout-code
       uses: actions/checkout@v4
     - name: upload artifact
