@@ -1,0 +1,19 @@
+name: Python workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  python-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v4
+      - name: setup python
+        uses: actions/setup-python@v5
+      - name: create python file
+        run: echo 'print("hello world")' > hello.py
+      - name: run python script
+        run: python hello.py
