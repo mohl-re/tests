@@ -4,6 +4,7 @@ on:
   workflow_dispatch:
 
 concurrency: concurent
+cancel-in-progress: true
 
 jobs:
   concurent-job:
