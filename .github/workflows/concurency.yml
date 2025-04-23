@@ -1,0 +1,11 @@
+name: concurency
+
+on:
+  workflow_dispatch:
+
+jobs:
+  concurent-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Do an LS
+        run: ls
