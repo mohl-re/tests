@@ -3,6 +3,8 @@ name: concurency
 on:
   workflow_dispatch:
 
+concurrency: concurent
+
 jobs:
   concurent-job:
     runs-on: ubuntu-latest
