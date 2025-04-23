@@ -3,8 +3,9 @@ name: concurency
 on:
   workflow_dispatch:
 
-concurrency: concurent
-cancel-in-progress: true
+concurrency:
+  group: concurent
+  cancel-in-progress: true
 
 jobs:
   concurent-job:
