@@ -1,0 +1,11 @@
+name: 'Test Organization Secrets'
+
+on:
+  workflow_dispatch:
+
+jobs:
+  org-secret-test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: 'Check org secret'
+      run: echo ${{ secrets.TEST }}
