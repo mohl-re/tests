@@ -5,13 +5,19 @@ on:
 
 jobs:
   job1:
+    outputs:
+      test-output: ${{ steps.step1.step1id.outputs }}
     runs-on: ubuntu-latest
     steps:
       - name: checkout
+        id: job1-id
         uses: actions/checkout@v4
+      - name: output
+        id: output
+        run: echo "test=world" > $GITHUB_OUTPUT
   job2:
     runs-on: ubuntu-latest
     needs: job1
     steps:
-      - name: echo
-        run: echo test
+      - name: echo output from job1
+        run: echo ${{ needs.job1.outputs.test-output }}
