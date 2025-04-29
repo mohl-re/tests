@@ -3,6 +3,8 @@ name: needs
 on:
   workflow_dispatch:
 
+environment: dev
+
 jobs:
   job1:
     outputs:
