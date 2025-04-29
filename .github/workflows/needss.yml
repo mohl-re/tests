@@ -3,10 +3,9 @@ name: needs
 on:
   workflow_dispatch:
 
-environment: dev
-
 jobs:
   job1:
+    environment: dev
     outputs:
       test-output: ${{ steps.output-id.outputs.test }}
     runs-on: ubuntu-latest
