@@ -8,7 +8,7 @@ env:
 
 jobs:
   job1:
-    env: dev
+    environment: dev
     runs-on: ubuntu-latest
     steps:
       - name: Checkout out
