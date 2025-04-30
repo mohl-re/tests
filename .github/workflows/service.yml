@@ -4,10 +4,11 @@ on:
   workflow_dispatch:
 
 env:
-  image_name: 'node:10.16-jessie'
+  image_name: 'node:latest'
 
 jobs:
   job1:
+    env: dev
     runs-on: ubuntu-latest
     steps:
       - name: Checkout out
