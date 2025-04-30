@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 env:
-  image_name: 'node:latest'
+  image_name: 'node:18'
 
 jobs:
   job1:
