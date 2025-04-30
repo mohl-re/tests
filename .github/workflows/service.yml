@@ -19,15 +19,14 @@ jobs:
     runs-on: ubuntu-latest
     needs: job1
     container:
-      image: $image_name
+      image: node:18
       env:
-        NODE_ENV: dev
+        NODE_ENV: development
       ports:
         - 80
       volumes:
-        - volume/volume_mount
-      options:
-        --cpus 1
+        - my_docker_volume:/volume_mount
+      options: --cpus 1
     services:
       redis:
         image: redis
