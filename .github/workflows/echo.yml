@@ -4,10 +4,10 @@ on:
   workflow_dispatch:
 
 jobs:
-  echo:
-    env:
-      MY_VAR: 'my_special_var'
+  bash-example:
     runs-on: ubuntu-latest
+    env:
+      MY_NAME: "Mona The Octocat"
     steps:
-      - name: run echo
-        echo "::add-mask::$MYVAR"
+      - name: bash-version
+        run: echo "::add-mask::$MY_NAME"
