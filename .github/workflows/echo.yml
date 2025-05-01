@@ -1,0 +1,13 @@
+name: echo
+
+on:
+  workflow_dispatch:
+
+jobs:
+  echo:
+    env:
+      MY_VAR: 'my_special_var'
+    runs-on: ubuntu-latest
+    steps:
+      - name: run echo
+        echo "::add-mask::$MYVAR"
