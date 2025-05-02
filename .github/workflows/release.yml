@@ -16,3 +16,5 @@ jobs:
           release_name: "1.0.0"
           body: "my first release"
           draft: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
