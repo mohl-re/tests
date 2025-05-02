@@ -10,14 +10,14 @@ jobs:
           POSTGRES_PASSWORD: postgres
         options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
         ports:
-  simple-job:
-    runs-on: ubuntu-latest
-    steps:
-      - name: checkout
-        uses: actions/checkout
           # Maps TCP port 5432 in the service container to a randomly chosen available port on the host.
           - 5432
 
     steps:
       - run: pg_isready -h localhost -p ${{ job.services.postgres.ports[5432] }}
       - run: echo "Run tests against Postgres"
+  simple-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
