@@ -6,7 +6,7 @@ on:
 jobs:
   my-context:
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
+    if: vars.MY_VAR == 'refs/heads/main'
     steps:
       - name: echo
         run: echo 'running on main'
