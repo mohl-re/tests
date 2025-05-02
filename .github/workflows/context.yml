@@ -6,7 +6,7 @@ on:
 jobs:
   my-context:
     runs-on: ubuntu-latest
-    if: vars.MY_VAR == 'test'
+    if: ${{ vars.MY_VAR == 'test' }}
     steps:
       - name: echo
         run: echo 'running on main'
