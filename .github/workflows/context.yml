@@ -6,7 +6,7 @@ on:
 jobs:
   my-context:
     runs-on: ubuntu-latest
-    if: vars.MY_VAR == 'refs/heads/main'
+    if: vars.MY_VAR == 'test'
     steps:
       - name: echo
         run: echo 'running on main'
