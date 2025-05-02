@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: create release
-        uses: actions/create-release@v2
+        uses: actions/create-release@main
         with:
           tag_name: 1.0.0
           release_name: "1.0.0"
