@@ -1,0 +1,11 @@
+name: create
+
+on:
+  create:
+
+jobs:
+  created:
+    runs-on: ubuntu-latest
+    steps:
+      - name: created
+        run: echo $GITHUB_REF_NAME
