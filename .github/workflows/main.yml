@@ -1,0 +1,11 @@
+name: deleted
+
+on:
+  delete:
+
+jobs:
+  delete-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: echo deleted branch or tag
+        run: echo $GITHUB_REF
